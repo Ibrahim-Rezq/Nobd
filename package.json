@@ -1,0 +1,35 @@
+{
+    "name": "nobd",
+    "version": "0.1.0",
+    "description": "Nobd (نَبْض) — a minimal Muslim routine tracker for prayers, adhkar and daily habits.",
+    "author": "Ibrahim",
+    "private": true,
+    "license": "MIT",
+    "workspaces": [
+        "frontend",
+        "backend"
+    ],
+    "scripts": {
+        "dev": "yarn --prefix frontend run dev",
+        "start:frontend": "yarn --prefix frontend run dev",
+        "start:backend": "yarn --prefix backend run start:dev",
+        "start": "yarn run start:backend",
+        "build": "yarn --prefix frontend run build && yarn --prefix backend run build",
+        "build:frontend": "yarn --prefix frontend run build",
+        "build:backend": "yarn --prefix backend run build",
+        "lint": "yarn --prefix frontend run lint || true && yarn --prefix backend run lint || true",
+        "test:backend": "yarn --prefix backend run test",
+        "test:frontend": "echo \"no frontend unit tests configured\"",
+        "test:e2e": "yarn --prefix backend run test:e2e"
+    },
+    "keywords": [
+        "nobd",
+        "salah",
+        "adhkar",
+        "habits",
+        "tracker"
+    ],
+    "engines": {
+        "node": ">=18"
+    }
+}
