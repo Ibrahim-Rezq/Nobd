@@ -20,7 +20,10 @@
         "lint": "yarn --cwd frontend lint || true && yarn --cwd backend lint || true",
         "test:backend": "yarn --cwd backend test",
         "test:frontend": "echo \"no frontend unit tests configured\"",
-        "test:e2e": "yarn --cwd backend test:e2e"
+        "test:e2e": "yarn --cwd backend test:e2e",
+        "prepare": "husky install",
+        "format": "yarn --cwd frontend format && yarn --cwd backend format",
+        "format:check": "yarn --cwd frontend format:check && yarn --cwd backend format:check"
     },
     "keywords": [
         "nobd",
@@ -31,5 +34,17 @@
     ],
     "engines": {
         "node": ">=18"
+    },
+    "devDependencies": {
+        "husky": "^8.0.0",
+        "lint-staged": "^15.0.2"
+    },
+    "lint-staged": {
+        "frontend/**/*.{ts,tsx,js,jsx,json,css,md}": [
+            "yarn --cwd frontend format"
+        ],
+        "backend/**/*.{ts,js,json,md}": [
+            "yarn --cwd backend format"
+        ]
     }
 }
