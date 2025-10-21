@@ -1,0 +1,47 @@
+name: '🐞 Bug Report'
+description: 'Report a bug or unexpected behavior in Nobd.'
+title: '[Bug] Short descriptive title'
+labels: ['bug']
+body:
+    - type: markdown
+      attributes:
+          value: |
+              ### 🐞 Bug Report Template
+              Use this to report any issue, regression, or broken functionality.
+
+    - type: input
+      id: env
+      attributes:
+          label: '🧠 Environment'
+          description: 'Where did this happen? (Browser, OS, version)'
+          placeholder: 'e.g., Chrome 120 / Windows 11'
+
+    - type: textarea
+      id: expected
+      attributes:
+          label: '✅ Expected Behavior'
+          description: 'What should have happened?'
+
+    - type: textarea
+      id: actual
+      attributes:
+          label: '❌ Actual Behavior'
+          description: 'What actually happened?'
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: '🔍 Steps to Reproduce'
+          description: 'Describe the exact steps to reproduce the bug.'
+
+    - type: textarea
+      id: logs
+      attributes:
+          label: '🧾 Console Output / Logs'
+          description: 'Paste relevant console errors or screenshots.'
+
+    - type: textarea
+      id: suggestions
+      attributes:
+          label: '💡 Possible Fix (Optional)'
+          description: 'If you have an idea how to fix it, describe it here.'
