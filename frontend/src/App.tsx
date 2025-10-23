@@ -18,39 +18,42 @@ import Adhkar from './pages/adhkar'
 import Dunya from './pages/dunya'
 import About from './pages/about'
 import NotFound from './pages/NotFound'
+import { useSalah } from './store/salahStore'
+import { useEffect } from 'react'
 
 const queryClient = new QueryClient()
+const App = () => {
+	const { setToday } = useSalah()
+	useEffect(() => {
+		setToday(new Date().toLocaleDateString('en-CA'))
+	}, [setToday])
+	return (
+		<QueryClientProvider client={queryClient}>
+			<TooltipProvider>
+				<Toaster />
+				<Sonner />
+				<BrowserRouter>
+					<div className="min-h-screen bg-background">
+						<TopNav />
+						<div className="md:hidden fixed top-4 right-4 z-50">
+							<ThemeToggle />
+						</div>
+						<main className="pb-20 md:pb-4">
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/salah" element={<Salah />} />
+								<Route path="/adhkar" element={<Adhkar />} />
+								<Route path="/dunya" element={<Dunya />} />
+								<Route path="/about" element={<About />} />
+								<Route path="*" element={<NotFound />} />
+							</Routes>
+						</main>
 
-const App = () => (
-	<QueryClientProvider client={queryClient}>
-		<TooltipProvider>
-			<Toaster />
-			<Sonner />
-			<BrowserRouter>
-				<div className="min-h-screen bg-background">
-					<TopNav />
-
-					{/* Mobile theme toggle - top right */}
-					<div className="md:hidden fixed top-4 right-4 z-50">
-						<ThemeToggle />
+						<BottomNav />
 					</div>
-
-					<main className="pb-20 md:pb-4">
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/salah" element={<Salah />} />
-							<Route path="/adhkar" element={<Adhkar />} />
-							<Route path="/dunya" element={<Dunya />} />
-							<Route path="/about" element={<About />} />
-							<Route path="*" element={<NotFound />} />
-						</Routes>
-					</main>
-
-					<BottomNav />
-				</div>
-			</BrowserRouter>
-		</TooltipProvider>
-	</QueryClientProvider>
-)
-
+				</BrowserRouter>
+			</TooltipProvider>
+		</QueryClientProvider>
+	)
+}
 export default App

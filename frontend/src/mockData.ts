@@ -1,6 +1,17 @@
 type SalahItem = { name: string; done: boolean }
 type SalahDay = { date: string; salah: SalahItem[] }
-
+export const initialSalahDataTemplate = (date: string): SalahDay => {
+	return {
+		date,
+		salah: [
+			{ name: 'Fajr', done: false },
+			{ name: 'Dhuhr', done: false },
+			{ name: 'Asr', done: false },
+			{ name: 'Maghrib', done: false },
+			{ name: 'Isha', done: false }
+		]
+	}
+}
 export const initialSalahData: SalahDay[] = [
 	{
 		date: '2025-10-15',
