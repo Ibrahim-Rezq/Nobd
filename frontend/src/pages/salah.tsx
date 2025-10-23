@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { useForm } from 'react-hook-form'
 import { useSalah } from '@/store/salahStore'
 import { SalahCard } from '@/components/salah/salah-card'
+import { Button } from '@/components/ui/button'
 type SalahItem = { name: string; done: boolean }
 type SalahDay = { date: string; salah: SalahItem[] }
 type FormValues = Record<string, boolean>
@@ -49,20 +50,12 @@ const Salah: React.FC = () => {
 						Selected Date: <span className="text-foreground">{new Date(currentDate).toDateString()}</span>
 					</p>
 					<div className="flex gap-4 justify-center mt-4">
-						<button
-							onClick={goPrevDay}
-							disabled={isAtMin}
-							className={`px-4 py-2 border rounded hover:bg-muted/50 ${isAtMin ? 'opacity-50 cursor-not-allowed' : ''}`}
-						>
+						<Button onClick={goPrevDay} disabled={isAtMin} variant="outline" size="lg">
 							Previous Day
-						</button>
-						<button
-							onClick={goNextDay}
-							disabled={isAtMax}
-							className={`px-4 py-2 border rounded hover:bg-muted/50 ${isAtMax ? 'opacity-50 cursor-not-allowed' : ''}`}
-						>
+						</Button>
+						<Button onClick={goNextDay} disabled={isAtMax} variant="outline" size="lg">
 							Next Day
-						</button>
+						</Button>
 					</div>
 				</div>
 

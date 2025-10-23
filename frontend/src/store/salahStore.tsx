@@ -4,7 +4,7 @@ import { initialSalahData, initialSalahDataTemplate } from '@/mockData'
 
 type SalahItem = { name: string; done: boolean }
 type SalahDay = { date: string; salah: SalahItem[] }
-import { getLocalDateString, addDays } from '@/lib/utils'
+import { getLocalDateString, addDays } from '@/utils/utils'
 
 type SalahState = {
 	salahData: SalahDay[]

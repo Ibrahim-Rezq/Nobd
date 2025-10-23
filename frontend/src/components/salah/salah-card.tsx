@@ -20,6 +20,8 @@ export function SalahCard({ name, control, onToggle }: SalahCardProps) {
 					<Card
 						className={`w-full backdrop-blur-sm bg-opacity-50 border-opacity-40 transition-transform duration-300 cursor-pointer select-none ${activeClass}`}
 						role="button"
+						aria-label={`Toggle ${name} prayer completion`}
+						aria-pressed={field.value}
 						onClick={() => {
 							const next = !field.value
 							field.onChange(next)
@@ -53,6 +55,7 @@ export function SalahCard({ name, control, onToggle }: SalahCardProps) {
 													className={`w-5 h-5 text-foreground transform transition-all duration-200 ${
 														field.value ? 'scale-110 rotate-6' : 'group-hover:scale-105'
 													}`}
+													aria-hidden="true"
 												/>
 											)
 										})()}

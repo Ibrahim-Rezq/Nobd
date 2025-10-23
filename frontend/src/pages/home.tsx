@@ -28,10 +28,10 @@ const Home = () => {
 				</p>
 
 				<div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-					<Button onClick={() => navigate('/salah')} size="lg" className="rounded-2xl">
+					<Button onClick={() => navigate('/salah')} size="lg">
 						Start with Salah
 					</Button>
-					<Button onClick={() => navigate('/adhkar')} variant="outline" size="lg" className="rounded-2xl">
+					<Button onClick={() => navigate('/adhkar')} variant="outline" size="lg">
 						Explore Adhkar
 					</Button>
 				</div>

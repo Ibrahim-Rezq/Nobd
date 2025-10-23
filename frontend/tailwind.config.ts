@@ -58,6 +58,20 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontSize: {
+				h1: ['1.875rem', { lineHeight: '1.2', fontWeight: '700' }], // 30px
+				h2: ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }], // 24px
+				h3: ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }], // 20px
+				body: ['1rem', { lineHeight: '1.6', fontWeight: '400' }], // 16px
+				small: ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }] // 14px
+			},
+			spacing: {
+				xs: '4px', // p-1, m-1
+				sm: '8px', // p-2, m-2
+				md: '16px', // p-4, m-4
+				lg: '24px', // p-6, m-6
+				xl: '32px' // p-8, m-8
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

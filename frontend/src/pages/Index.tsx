@@ -1,4 +1,8 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+/**
+ * Page: Index
+ * Purpose: Fallback page (should redirect to home)
+ * Added: MVP0
+ */
 
 const Index = () => {
 	return (

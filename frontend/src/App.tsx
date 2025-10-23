@@ -17,7 +17,7 @@ import Salah from './pages/salah'
 import Adhkar from './pages/adhkar'
 import Dunya from './pages/dunya'
 import About from './pages/about'
-import NotFound from './pages/NotFound'
+import NotFound from './pages/not-found'
 import { useSalah } from './store/salahStore'
 import { useEffect } from 'react'
 

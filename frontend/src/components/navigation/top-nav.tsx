@@ -6,7 +6,7 @@
 
 import { Home, MapPinHouseIcon, BookOpen, Target, Info } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/utils'
 import { ThemeToggle } from '@/components/layout/theme-toggle'
 
 const navItems = [
@@ -19,9 +19,13 @@ const navItems = [
 
 export const TopNav = () => {
 	return (
-		<nav className="hidden md:flex items-center justify-between px-6 py-4 bg-card border-b border-border shadow-sm">
+		<nav
+			className="hidden md:flex items-center justify-between px-6 py-4 bg-card border-b border-border shadow-sm"
+			role="navigation"
+			aria-label="Main navigation"
+		>
 			<div className="flex items-center gap-2">
-				<MapPinHouseIcon className="h-6 w-6 text-primary" />
+				<MapPinHouseIcon className="h-6 w-6 text-primary" aria-hidden="true" />
 				<span className="text-xl font-semibold text-foreground">Nobd</span>
 			</div>
 
@@ -30,6 +34,7 @@ export const TopNav = () => {
 					<NavLink
 						key={item.to}
 						to={item.to}
+						aria-label={`Navigate to ${item.label}`}
 						className={({ isActive }) =>
 							cn(
 								'flex items-center gap-2 px-4 py-2 rounded-2xl transition-all duration-200 ease-in-out',
@@ -39,7 +44,7 @@ export const TopNav = () => {
 							)
 						}
 					>
-						<item.icon className="h-6 w-6" />
+						<item.icon className="h-6 w-6" aria-hidden="true" />
 						<span>{item.label}</span>
 					</NavLink>
 				))}
